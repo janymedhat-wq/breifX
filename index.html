@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BriefX | Smart Briefcases for Every Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom Monospace Logo Style */
+        .logo-mono {
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.05em;
+        }
+        .logo-x {
+            font-size: 1.3em;
+            line-height: 0;
+            vertical-align: middle;
+            display: inline-block;
+            margin-left: -0.05em;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .product-card img {
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        .play-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+        .vertical-video-container {
+            aspect-ratio: 9 / 16;
+            background: #000;
+        }
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md px-8 py-4 flex justify-between items-center border-b border-gray-100">
+        <div class="text-2xl font-bold logo-mono">Brief<span class="logo-x">X</span></div>
+        <div class="hidden md:flex space-x-10 text-xs uppercase tracking-widest font-medium">
+            <a href="#collection" class="hover:text-gray-400 transition-colors">Collection</a>
+            <a href="#tech" class="hover:text-gray-400 transition-colors">Technology</a>
+            <a href="#story" class="hover:text-gray-400 transition-colors">Our Story</a>
+        </div>
+        <button class="px-5 py-2 bg-black text-white text-[10px] uppercase tracking-[0.2em] hover:bg-gray-800 transition-all">
+            Order Now
+        </button>
+    </nav>
+
+    <!-- Hero / Product Showcase -->
+    <section id="collection" class="pt-32 pb-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="reveal active mb-12">
+                <h2 class="text-3xl font-bold mb-2 logo-mono">Brief<span class="logo-x">X</span></h2>
+                <h1 class="text-5xl md:text-6xl mb-4 leading-tight">Smart Briefcases for Every Professional</h1>
+                <p class="text-gray-500 tracking-wide">AI-Powered Security & Convenience</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
+                <!-- Brown Leather -->
+                <div class="product-card reveal active">
+                    <div class="aspect-[4/3] flex items-center justify-center mb-6">
+                        <img src="img1.png" alt="Brown Leather" class="max-h-full w-auto">
+                    </div>
+                    <h3 class="text-xl mb-4">Brown Leather</h3>
+                    <button class="px-10 py-2 bg-gray-200 text-gray-800 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-gray-300 transition-all">
+                        Shop Now
+                    </button>
+                </div>
+
+                <!-- White -->
+                <div class="product-card reveal active" style="transition-delay: 0.1s">
+                    <div class="aspect-[4/3] flex items-center justify-center mb-6">
+                        <img src="img2.png" alt="White" class="max-h-full w-auto">
+                    </div>
+                    <h3 class="text-xl mb-4">White</h3>
+                    <button class="px-10 py-2 bg-[#3a3b3c] text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black transition-all">
+                        Shop Now
+                    </button>
+                </div>
+
+                <!-- Black -->
+                <div class="product-card reveal active" style="transition-delay: 0.2s">
+                    <div class="aspect-[4/3] flex items-center justify-center mb-6">
+                        <img src="img3.png" alt="Black" class="max-h-full w-auto">
+                    </div>
+                    <h3 class="text-xl mb-4">Black</h3>
+                    <button class="px-10 py-2 bg-[#1a1a1a] text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-black transition-all">
+                        Shop Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Feature Bar -->
+            <div class="max-w-4xl mx-auto mt-24 border-t border-gray-100 pt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="flex items-center space-x-4 reveal active">
+                    <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 0012 3m0 18a10.003 10.003 0 01-8.213-4.31m8.213 4.31c1.744-2.772 2.753-6.054 2.753-9.571m0 0a10.003 10.003 0 018.213-4.31M12 3v18"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-800">Fingerprint</p>
+                        <p class="text-sm font-semibold text-gray-800">& Facial Lock</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 reveal active" style="transition-delay: 0.1s">
+                    <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-800">Device</p>
+                        <p class="text-sm font-semibold text-gray-800">Charging</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 reveal active" style="transition-delay: 0.2s">
+                    <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-800">Smart</p>
+                        <p class="text-sm font-semibold text-gray-800">Organization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Series Section (3x 9:16 Videos) -->
+    <section class="pb-32 pt-10 bg-white">
+        <div class="container mx-auto px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold mb-4">BriefX in Motion</h2>
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Captured by the Community</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Video 1 -->
+                <div class="reveal vertical-video-container relative group overflow-hidden rounded-2xl shadow-lg">
+                    <!-- Added autoplay, loop, muted, and playsinline to ensure they are "open" and running -->
+                    <video class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-100 opacity-90" 
+                           autoplay loop muted playsinline 
+                           poster="https://images.unsplash.com/photo-1544816153-0973bb7467ee?auto=format&fit=crop&q=80&w=600">
+                        <source src="breif.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <p class="text-white text-[10px] uppercase tracking-widest font-bold drop-shadow-md">01. Unboxing Experience</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="reveal vertical-video-container relative group overflow-hidden rounded-2xl shadow-lg" style="transition-delay: 0.1s">
+                    <video class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-100 opacity-90" 
+                           autoplay loop muted playsinline 
+                           poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600">
+                        <source src="breif2.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <p class="text-white text-[10px] uppercase tracking-widest font-bold drop-shadow-md">02. Tech in Action</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="reveal vertical-video-container relative group overflow-hidden rounded-2xl shadow-lg" style="transition-delay: 0.2s">
+                    <video class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-100 opacity-90" 
+                           autoplay loop muted playsinline 
+                           poster="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=600">
+                        <source src="product3.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <p class="text-white text-[10px] uppercase tracking-widest font-bold drop-shadow-md">03. Professional Style</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 pt-20 pb-10">
+        <div class="container mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-400">
+                <div class="text-lg font-bold text-black logo-mono mb-4 md:mb-0">Brief<span class="logo-x">X</span></div>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-black">Instagram</a>
+                    <a href="#" class="hover:text-black">LinkedIn</a>
+                    <a href="#" class="hover:text-black">Contact</a>
+                </div>
+                <p class="mt-4 md:mt-0">&copy; 2026 BriefX Intelligent Goods.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
